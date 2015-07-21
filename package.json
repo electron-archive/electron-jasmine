@@ -3,6 +3,9 @@
   "appName": "ElectronJasmine",
   "version": "0.0.1",
   "main": "main.js",
+  "bin": {
+    "electron-jasmine": "cli.sh"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/benogle/electron-jasmine.git"
@@ -12,11 +15,11 @@
     "src"
   ],
   "devDependencies": {
-    "electron-prebuilt": "^0.30.0",
     "husk-cli": "^0.2.0"
   },
   "dependencies": {
     "coffee-script": "^1.9.3",
+    "electron-prebuilt": "^0.30.0",
     "fs-plus": "^2.8.1",
     "jasmine-tagged": "^1.1.4"
   }
