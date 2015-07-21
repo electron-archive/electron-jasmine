@@ -1,7 +1,7 @@
 {
   "name": "electron-jasmine",
   "appName": "ElectronJasmine",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "main.js",
   "bin": {
     "electron-jasmine": "cli.sh"
@@ -10,8 +10,7 @@
     "type": "git",
     "url": "https://github.com/benogle/electron-jasmine.git"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "coffee-script": "^1.9.3",
     "electron-prebuilt": "^0.30.0",
