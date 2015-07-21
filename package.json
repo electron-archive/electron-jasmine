@@ -3,18 +3,21 @@
   "appName": "ElectronJasmine",
   "version": "0.0.1",
   "main": "main.js",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/benogle/electron-jasmine.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benogle/electron-jasmine.git"
   },
   "compileCacheDir": "./compile-cache",
   "compileDirs": [
-    "src", "styles", "static"
+    "src"
   ],
   "devDependencies": {
-    "electron-compile": "*",
-    "electron-prebuilt": "^0.29.2",
+    "electron-prebuilt": "^0.30.0",
     "husk-cli": "^0.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "coffee-script": "^1.9.3",
+    "fs-plus": "^2.8.1",
+    "jasmine-tagged": "^1.1.4"
+  }
 }
