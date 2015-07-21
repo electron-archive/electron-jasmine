@@ -1,7 +1,9 @@
 var ApplicationWindow = require('./application-window')
-var ipc = require('ipc')
 var BrowserWindow = require('browser-window')
+var ipc = require('ipc')
 var app = require('app')
+var path = require('path')
+var argv = require('yargs').argv
 
 var Application = function(options) {
   var self = this
@@ -23,7 +25,10 @@ var Application = function(options) {
 }
 
 Application.prototype.openWindow = function() {
-  var win = new ApplicationWindow("file://" + __dirname + "/../main-window/index.html", {width: 1200, height: 800})
+  var args = {
+    paths: argv._
+  }
+  var win = new ApplicationWindow(path.resolve(__dirname, "..", "main-window", "index.html"), {show: false}, args)
   this.addWindow(win)
 }
 

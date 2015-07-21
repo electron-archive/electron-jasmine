@@ -10,17 +10,13 @@
     "type": "git",
     "url": "https://github.com/benogle/electron-jasmine.git"
   },
-  "compileCacheDir": "./compile-cache",
-  "compileDirs": [
-    "src"
-  ],
   "devDependencies": {
-    "husk-cli": "^0.2.0"
   },
   "dependencies": {
     "coffee-script": "^1.9.3",
     "electron-prebuilt": "^0.30.0",
     "fs-plus": "^2.8.1",
-    "jasmine-tagged": "^1.1.4"
+    "jasmine-tagged": "^1.1.4",
+    "yargs": "^3.15.0"
   }
 }
