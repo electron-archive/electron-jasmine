@@ -1,26 +1,10 @@
-# Electron Jasmine.app
+# Electron Jasmine
 
-:no_entry_sign: this is a work in progress. It will change. Don't use it yet.
-
-This is a sample app to work with https://github.com/atom/husk-cli
+Run your jasmine specs in electron. Useful for node modules that need to use the DOM, or electron-isms.
 
 ```bash
-npm install # to install husk
-husk bootstrap
+npm install --save-dev electron-jasmine
+electron-jasmine ./spec-directory
 ```
 
-Then you can run it. This will run the app in development mode.
-
-```
-husk run
-```
-
-And when you're ready to build for release run:
-
-```
-husk build
-```
-
-#### Magic
-
-![shot](https://cloud.githubusercontent.com/assets/69169/8764013/24ac8468-2d6f-11e5-9bc2-644577d710d4.png)
+![.](https://cloud.githubusercontent.com/assets/69169/8792820/7ff18c8e-2f21-11e5-9245-252ba4b380b1.png)
