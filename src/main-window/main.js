@@ -9,14 +9,14 @@ var hash = window.location.hash.slice(1)
 var args = Object.freeze(JSON.parse(decodeURIComponent(hash)))
 
 var run = function() {
-  if (args.paths.length === 0){
-    browserStderr.write('No paths specified\n')
+  if (!args.specDirectory){
+    browserStderr.write('No spec directory specified\n')
     return exit(1)
   }
 
   var jasmine = window.jasmine = new Jasmine();
   jasmine.loadConfig({
-    spec_dir: args.paths[0],
+    spec_dir: args.specDirectory,
     spec_files: [
       '*[sS]pec.coffee',
       '*[sS]pec.js'
@@ -37,7 +37,7 @@ var run = function() {
   jasmine.configureDefaultReporter({
       showColors: true,
       print: function() {
-        log(util.format.apply(this, arguments));
+        log(util.format.apply(util, arguments))
       }
   })
 
