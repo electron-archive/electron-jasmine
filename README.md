@@ -1,6 +1,6 @@
 # Electron Jasmine
 
-Run your jasmine specs in electron. Useful for node modules that need to use the DOM, or electron-isms.
+Run your jasmine (2.3) specs in electron. Useful for node modules that need to use the DOM, or electron-isms.
 
 ```bash
 npm install --save-dev electron-jasmine
