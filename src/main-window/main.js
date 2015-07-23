@@ -1,4 +1,4 @@
-require('coffee-script').register()
+require('electron-compile').init();
 
 var util = require('util')
 var remote = require('remote')

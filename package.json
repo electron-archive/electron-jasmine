@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "coffee-script": "^1.9.3",
+    "electron-compile": "^0.7.0",
     "electron-prebuilt": "^0.30.0",
     "jasmine": "^2.3.1",
     "yargs": "^3.15.0"
