@@ -1,10 +1,9 @@
-require('coffee-script')
-var browserStderr = require('remote').getGlobal('process').stderr
+require('coffee-script').register()
 
-var fs = require('fs-plus')
-var path = require('path')
+var util = require('util')
 var remote = require('remote')
-var TerminalReporter = require('jasmine-tagged').TerminalReporter
+var Jasmine = require('jasmine')
+var browserStderr = remote.getGlobal('process').stderr
 
 var hash = window.location.hash.slice(1)
 var args = Object.freeze(JSON.parse(decodeURIComponent(hash)))
@@ -15,25 +14,34 @@ var run = function() {
     return exit(1)
   }
 
-  reporter = new TerminalReporter({
-    color: true,
-    print: function(str) {
-      log(str)
-    },
-    onComplete: function(runner) {
-      if (runner.results().failedCount > 0)
-        exit(1)
-      else
-        exit(0)
-    }
+  var jasmine = window.jasmine = new Jasmine();
+  jasmine.loadConfig({
+    spec_dir: args.paths[0],
+    spec_files: [
+      '*[sS]pec.coffee',
+      '*[sS]pec.js'
+    ],
+    helpers: [
+      '*[hH]elper.coffee',
+      '*[hH]elper.js'
+    ]
   })
 
-  requireSpecs(path.resolve(args.paths[0]))
+  jasmine.onComplete(function(passed) {
+    if(passed)
+      exit(0)
+    else
+      exit(1)
+  })
 
-  var jasmineEnv = jasmine.getEnv()
-  jasmineEnv.addReporter(reporter)
-  jasmineEnv.setIncludedTags([process.platform])
-  jasmineEnv.execute()
+  jasmine.configureDefaultReporter({
+      showColors: true,
+      print: function() {
+        log(util.format.apply(this, arguments));
+      }
+  })
+
+  jasmine.execute()
 }
 
 var exit = function(status) {
@@ -46,15 +54,6 @@ var log = function(str) {
   // FIXME: UGH, writing to process.stdout fails, and process.stderr is silent
   // process.stdout.write(str)
   browserStderr.write(str)
-}
-
-var requireSpecs = function(specDirectory) {
-  var fileList = fs.listTreeSync(specDirectory)
-  for (var i = 0; i < fileList.length; i++){
-    var specFilePath = fileList[i]
-    if (/-spec\.(coffee|js)$/.test(specFilePath))
-      require(specFilePath)
-  }
 }
 
 run()
