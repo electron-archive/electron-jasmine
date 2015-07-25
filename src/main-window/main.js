@@ -1,3 +1,4 @@
+var path = require('path')
 var util = require('util')
 var remote = require('remote')
 var Jasmine = require('jasmine')
@@ -38,6 +39,9 @@ var run = function() {
         log(util.format.apply(util, arguments))
       }
   })
+
+  // Require the global helper
+  require(path.join(__dirname, '..', 'spec-helper.js'))
 
   jasmine.execute()
 }
