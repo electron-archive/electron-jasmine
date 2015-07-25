@@ -13,8 +13,9 @@ var run = function() {
     return exit(1)
   }
 
-  var jasmine = window.jasmine = new Jasmine();
+  var jasmine = new Jasmine()
   jasmine.loadConfig({
+    timer: new this.jasmine.Timer(),
     spec_dir: args.specDirectory,
     spec_files: [
       '*[sS]pec.coffee',
@@ -39,6 +40,9 @@ var run = function() {
         log(util.format.apply(util, arguments))
       }
   })
+
+  // The jasmine object that the specs will use
+  window.jasmine = jasmine.jasmine
 
   // Require the global helper
   require(path.join(__dirname, '..', 'spec-helper.js'))
