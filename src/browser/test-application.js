@@ -31,7 +31,7 @@ var TestApplication = function(options) {
 }
 
 TestApplication.prototype.openWindow = function() {
-  var htmlPath = path.resolve(__dirname, "..", "main-window", "index.html")
+  var htmlPath = path.resolve(__dirname, "..", "terminal-runner", "index.html")
   this.window = new ApplicationWindow(htmlPath, {show: false}, this.options)
 }
 
