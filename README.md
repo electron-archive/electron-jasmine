@@ -29,7 +29,6 @@ A practical example that makes your app accept a `--test` command line parameter
 var path = require('path')
 var argv = require('yargs')
   .default('test', false)
-  .default('environment', 'production')
   .argv
 
 if (argv.test) {
