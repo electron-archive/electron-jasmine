@@ -35,10 +35,10 @@ var run = function() {
   })
 
   jasmine.configureDefaultReporter({
-      showColors: true,
-      print: function() {
-        log(util.format.apply(util, arguments))
-      }
+    showColors: true,
+    print: function() {
+      log(util.format.apply(util, arguments))
+    }
   })
 
   // The jasmine object that the specs will use
