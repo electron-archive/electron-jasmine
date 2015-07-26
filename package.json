@@ -13,11 +13,16 @@
   "scripts": {
     "test": "./cli.sh ./spec"
   },
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
     "electron-compile": "^0.7.0",
-    "electron-prebuilt": "^0.30.0",
+    "electron-prebuilt": "^0.30.0"
+  },
+  "dependencies": {
     "jasmine": "^2.3.1",
     "yargs": "^3.15.0"
+  },
+  "peerDependencies": {
+    "electron-compile": "^0.7.0",
+    "electron-prebuilt": "^0.30.0"
   }
 }
