@@ -54,7 +54,16 @@ var run = function() {
   // Require the global helper
   require(path.join(__dirname, '..', 'spec-helper.js'))
 
-  jasmine.execute()
+  try {
+    jasmine.execute()
+  } catch (e) {
+    var redStart = '\u001b[31m'
+    var yellowStart = '\u001b[33m'
+    var end = '\u001b[39m'
+    log(yellowStart + 'ERROR executing specs:\n' + end)
+    log(redStart + e.message + '\n' + end)
+    exit(1)
+  }
 }
 
 var exit = function(status) {
