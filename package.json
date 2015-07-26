@@ -22,7 +22,7 @@
     "yargs": "^3.15.0"
   },
   "peerDependencies": {
-    "electron-compile": "^0.7.0",
-    "electron-prebuilt": "^0.30.0"
+    "electron-compile": "0.x",
+    "electron-prebuilt": "0.x"
   }
 }
