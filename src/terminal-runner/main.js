@@ -7,6 +7,13 @@ var browserStderr = remote.getGlobal('process').stderr
 var hash = window.location.hash.slice(1)
 var args = Object.freeze(JSON.parse(decodeURIComponent(hash)))
 
+try {
+  // HACK: For some reason, when this is included as an NPM, electron-compile
+  // isnt getting setup for the renderer processes when `init` is invoked in the
+  // browser's main file.
+  require('electron-compile').init()
+} catch (e) {}
+
 var run = function() {
   if (!args.specDirectory){
     browserStderr.write('No spec directory specified\n')
