@@ -61,7 +61,7 @@ var run = function() {
     var yellowStart = '\u001b[33m'
     var end = '\u001b[39m'
     log(yellowStart + 'ERROR executing specs:\n' + end)
-    log(redStart + e.message + '\n' + end)
+    log(redStart + e.stack + '\n' + end)
     exit(1)
   }
 }
