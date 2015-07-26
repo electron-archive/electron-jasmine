@@ -8,5 +8,9 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 ELECRON_PATH="$DIR/node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron"
+if [ ! -f "$ELECRON_PATH" ]; then
+  ELECRON_PATH="$DIR/../electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron"
+fi
+
 $ELECRON_PATH $DIR --executed-from="$(pwd)" --pid=$$ "$@"
 exit $?
