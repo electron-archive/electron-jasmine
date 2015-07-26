@@ -18,12 +18,12 @@ var run = function() {
     timer: new this.jasmine.Timer(),
     spec_dir: args.specDirectory,
     spec_files: [
-      '*[sS]pec.coffee',
-      '*[sS]pec.js'
+      '**/*[sS]pec.coffee',
+      '**/*[sS]pec.js'
     ],
     helpers: [
-      '*[hH]elper.coffee',
-      '*[hH]elper.js'
+      '**/*[hH]elper.coffee',
+      '**/*[hH]elper.js'
     ]
   })
 
