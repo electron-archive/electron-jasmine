@@ -18,6 +18,7 @@
     "electron-prebuilt": "^0.30.0"
   },
   "dependencies": {
+    "async": "^1.4.0",
     "jasmine": "^2.3.1",
     "yargs": "^3.15.0"
   },
