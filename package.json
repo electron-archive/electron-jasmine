@@ -11,13 +11,14 @@
     "url": "https://github.com/benogle/electron-jasmine.git"
   },
   "scripts": {
-    "test": "./cli.sh ./spec"
+    "test": "./cli.sh --renderer ./spec/renderer --browser ./spec/browser"
   },
   "devDependencies": {
     "electron-compile": "^0.7.0",
     "electron-prebuilt": "^0.30.0"
   },
   "dependencies": {
+    "async": "^1.4.0",
     "jasmine": "^2.3.1",
     "yargs": "^3.15.0"
   },
