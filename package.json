@@ -3,6 +3,7 @@
   "appName": "ElectronJasmine",
   "version": "0.1.8",
   "main": "main.js",
+  "license": "MIT",
   "bin": {
     "electron-jasmine": "cli.sh"
   },
@@ -14,8 +15,9 @@
     "test": "./cli.sh ./spec"
   },
   "devDependencies": {
-    "electron-compile": "^0.7.0",
-    "electron-prebuilt": "^0.30.0"
+    "electron-compile": "^1.0.0",
+    "electron-compilers": "^1.0.1",
+    "electron-prebuilt": "^0.34.2"
   },
   "dependencies": {
     "async": "^1.4.0",
@@ -23,7 +25,7 @@
     "yargs": "^3.15.0"
   },
   "peerDependencies": {
-    "electron-compile": "0.x",
+    "electron-compile": "1.x",
     "electron-prebuilt": "0.x"
   }
 }
